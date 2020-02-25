@@ -1,0 +1,21 @@
+#imagen{
+    height: 75px;
+    width: 75px;
+    border-radius: 150px;
+    float: right;
+    margin-top: 75px;
+}
+
+#imagen_perfil{
+    height: 75px;
+    width: 75px;
+    border-radius: 150px;
+}
+
+#usuarios{
+    float: left;
+}
+
+#opciones{
+    float: right;
+}
