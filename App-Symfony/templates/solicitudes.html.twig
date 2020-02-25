@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Amigos{% endblock %}
+{% block body %}
+    <div id="amigos">
+        {% if solicitudes is empty %}
+            <p>No tienes solicitudes</p>
+        {% else %}
+            <table>
+                {% for solicitud in solicitudes %}
+                    <tr>
+                        <td>
+                            El usuario {{ solicitud.idusuario }} te quiere agregar a su lista de amigos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="{{ path('aceptarDenegar', {'opcion': 1, 'amigo': solicitud.idusuario}) }}">Aceptar Solicitud</a>
+                            <a href="{{ path('aceptarDenegar', {'opcion': 2, 'amigo': solicitud.idusuario}) }}">Rechazar Solicitud</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}

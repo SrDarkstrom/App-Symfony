@@ -1,0 +1,25 @@
+security:
+    providers:
+        correo:
+            entity:
+                class: App\Entity\Usuarios
+                property: correo
+    encoders:
+        App\Entity\Usuarios:
+            algorithm: bcrypt
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            form_login:
+                login_path: login
+                check_path: login
+                default_target_path: recibidos
+            provider: correo
+            logout:
+                path:   /logout
+                target: /
+
+

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mensaje de {{ mensaje.Emisor.Nombre }} {{ mensaje.Emisor.Apellidos }}{% endblock %}
+{% block body %}
+    <div>
+        <div>De: {{ mensaje.Emisor.Correo }}</div>
+        <div>{{ mensaje.Leido }}</div>
+        <div>Asunto: {{ mensaje.Asunto }}</div>
+        <div>{{ mensaje.Mensaje }}</div>
+        {% if mensaje.fichero is not empty %}
+            <a download="{{ mensaje.Fichero }}" href="{{ asset('Ficheros/Adjuntos/' ~ mensaje.Fichero ) }}">{{ mensaje.Fichero }}</a>
+        {% endif %}
+        <a href="{{ path('responder_mensaje', {'id': mensaje.Codigo}) }}">Responder</a>
+    </div>
+{% endblock %}

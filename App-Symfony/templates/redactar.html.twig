@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %}Redactar{% endblock %}
+{% block body %}
+    <form action="{{ path('enviar_mensaje') }}" method="post" enctype="multipart/form-data">
+        <label for="usuarios">Para:</label>
+        <select id="usuarios" name="usuarios">
+            {% for usuario in id_usuarios %}
+                <option>{{ usuario.idusuario }}</option>
+            {% endfor %}
+        </select>
+        <label for="asunto">Asunto:</label>
+        <input id="asunto" name="asunto" type="text">
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje"></textarea>
+        <label for="fichero">Fichero:</label>
+        <input id="fichero" name="fichero" type="file">
+        <input type="submit" value="Enviar Mensaje">
+    </form>
+{% endblock %}
