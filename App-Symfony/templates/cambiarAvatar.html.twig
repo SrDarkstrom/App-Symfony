@@ -1,9 +1,0 @@
-{% extends 'base.html.twig' %}
-{% block title %}Amigos{% endblock %}
-{% block body %}
-    <form action="{{ path('cambiarAvatar') }}" method="post" enctype="multipart/form-data">
-        <label for="nuevo">Nuevo Avatar: </label>
-        <input id="nuevo" name="nuevo" type="file"  accept="image/*">
-        <input type="submit" value="cambiarAvatar">
-    </form>
-{% endblock %}

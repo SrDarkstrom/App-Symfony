@@ -1,3 +1,0 @@
-<?php
-//Prueba de git
-?>
